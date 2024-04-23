@@ -1,0 +1,50 @@
+import React from 'react'
+import './product.css'
+
+const Product = () => {
+    const items=[{id:1,title:"React Course",price:"200rs"},{id:2,title:"JS Course",price:"500rs"},{id:3,title:"Html & Css Course",price:"50rs"}
+]
+
+
+const show=(product)=>{
+    console.log(product," added to your cart")
+}
+
+
+  
+ 
+
+
+  return (
+    <>
+     <div className="container">
+        <h1>Product List</h1>
+
+        {items.map((item)=>{
+            return(
+                <>
+                  <div className="item">
+
+                    <strong className='title'>{item.title}</strong>
+                    <p className="price">{item.price}</p>
+                   <button className="add-to-cart" onClick={()=>{
+                     show(item.title)
+                   }
+                    
+                     }>Add To Cart</button>
+                   </div>
+                
+                </>
+            )
+        })
+            
+            
+          
+           }
+     </div>
+      
+    </>
+  )
+}
+
+export default Product;
